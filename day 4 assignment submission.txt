@@ -1,0 +1,25 @@
+1) both are the same; so we can use of the formula
+
+
+2)function for ternary search
+
+int ts(int l,int r, int key)
+{
+    if(r>=l)
+    {
+        int mid1 = l + (r-l)/3;
+        int mid2 = r -  (r-l)/3;
+        if(a[mid1] == key)
+            return mid1;
+        if(a[mid2] == key)
+            return mid2;
+        if(key < a[mid1])
+            return ts(l, mid1-1, key);
+        else if(key > a[mid2])
+            return ts(mid2+1, r, key);
+        else
+            return ts(mid1+1, mid2-1, key);
+
+    }
+    return -1;
+}
